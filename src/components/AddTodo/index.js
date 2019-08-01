@@ -17,7 +17,10 @@ class index extends Component {
 
   addTodo = event => {
     event.preventDefault();
-    this.props.addTodo(this.state.inputTodoText);
+    if(this.state.inputTodoText === '' || this.state.inputTodoText.length < 4)
+      alert('Digite uma tarefa valida para adicionar a lista');
+    else
+      this.props.addTodo(this.state.inputTodoText);
     this.setState({inputTodoText: ''});
   }
 
