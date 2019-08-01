@@ -11,3 +11,10 @@ export const removeTodo = id => ({
     id
   }
 });
+
+export const isCompleted = id => ({
+  type: 'IS_COMPLETED',
+  payload: {
+    id
+  }
+});

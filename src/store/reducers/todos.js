@@ -23,6 +23,15 @@ function todos(state = INITIAL_STATE, action){
       return state.filter(todo => (
         todo.id !== action.payload.id
       ));
+    case 'IS_COMPLETED':
+      const index = state.findIndex(todo => (
+        todo.id === action.payload.id
+      ));
+      const stateCopy = [...state];
+      stateCopy.splice(
+        index, 1, 
+        {...stateCopy[index], completed: !stateCopy[index].completed});
+      return stateCopy;
     default:
       return state;
   }

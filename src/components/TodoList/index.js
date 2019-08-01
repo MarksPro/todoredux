@@ -11,7 +11,7 @@ const TodoList = (props) => (
         <button onClick={() => props.removeTodo(todo.id)}>
           Remover
         </button>
-        <button>
+        <button onClick={() => props.isCompleted(todo.id)}>
           {todo.completed ? 'Refazer' : 'Finalizar'}
         </button>
       </li>
