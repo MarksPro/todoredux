@@ -1,8 +1,9 @@
 import React from 'react';
+import TodoContainer from './components/TodoContainer';
 
 function App() {
   return (
-    <h1>Start TodoList React + Redux</h1>
+    <TodoContainer/>
   );
 }
 
