@@ -32,6 +32,12 @@ function todos(state = INITIAL_STATE, action){
         index, 1, 
         {...stateCopy[index], completed: !stateCopy[index].completed});
       return stateCopy;
+    case 'SELECT_REMOVE':
+      return state.filter(todo => (
+        todo.completed !== true
+      ));
+    case 'REMOVE_ALL':
+      return state = [];
     default:
       return state;
   }

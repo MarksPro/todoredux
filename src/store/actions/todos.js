@@ -18,3 +18,11 @@ export const isCompleted = id => ({
     id
   }
 });
+
+export const selectRemove = () => ({
+  type: 'SELECT_REMOVE',
+});
+
+export const removeAll = () => ({
+  type: 'REMOVE_ALL',
+});
