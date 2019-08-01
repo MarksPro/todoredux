@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actionsTodos from '../../store/actions/todos';
@@ -9,6 +11,10 @@ class index extends Component {
     this.state = {  
       inputTodoText: ''
     };
+  }
+
+  static propTypes = {
+    addTodo: PropTypes.func.isRequired
   }
 
   getInputText = e => {

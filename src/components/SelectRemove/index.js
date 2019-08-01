@@ -1,11 +1,11 @@
 import React from 'react';
+
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actionsTodo from '../../store/actions/todos';
 
-const SelectRemove = (props) => {
-  console.log(props)
-  return (
+const SelectRemove = (props) => (
   <div>
   {props.todos.length > 0 &&
   <>
@@ -20,7 +20,12 @@ const SelectRemove = (props) => {
   </>
   }
   </div>
-)};
+);
+
+SelectRemove.propTypes = {
+  removeAll: PropTypes.func.isRequired,
+  selectRemove: PropTypes.func.isRequired
+};
 
 const mapStateToProps = state => ({
   todos: state.todos
