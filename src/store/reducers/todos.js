@@ -13,6 +13,12 @@ const INITIAL_STATE = [
 
 function todos(state = INITIAL_STATE, action){
   switch(action.type){
+    case 'ADD_TODO':
+      return [...state, {
+        id: Math.random(),
+        text: action.payload.text,
+        completed: false
+      }]
     default:
       return state;
   }
